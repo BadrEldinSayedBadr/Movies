@@ -47,7 +47,7 @@ let routers = createBrowserRouter([
     {path: 'register', element: <Register/>},
     {path: 'movies', element: <ProtectedRoute userData={userData}><Movies/></ProtectedRoute>},
     {path: 'people', element: <ProtectedRoute userData={userData}><People/></ProtectedRoute>},
-    {path: 'profile', element: <ProtectedRoute userData={userData}><Profile/></ProtectedRoute>},
+    {path: 'profile', element: <ProtectedRoute userData={userData}><Profile userData={userData}/></ProtectedRoute>},
     {path: 'itemdetails/:id/:media_type', element: <ProtectedRoute userData={userData}><ItemDetails/></ProtectedRoute>},
     {path: 'tv', element: <ProtectedRoute userData={userData}><Tv/></ProtectedRoute>},
     {path: '*', element: <NotFound/>},

@@ -29,13 +29,15 @@ export default function ItemDetails() {
 }
         </div>
         <div className="col-md-9">
-            <h2>{itemDetails.title}{itemDetails.name}</h2>
-            <p className='py-2 text-muted'>{itemDetails.tagline}</p>
-            {itemDetails.vote_average? <div className='py-2 '>vote : {itemDetails.vote_average && <h6 className=' p-2 text-white d-inline'>{itemDetails.vote_average?.toFixed(1)}</h6>} </div> :''}
+            <h2 className='fw-bolder'>{itemDetails.title}{itemDetails.name}</h2>
+            <p className=' text-muted'>{itemDetails.tagline}</p>
+            {itemDetails.vote_average? <div className='py-2'>Vote : {itemDetails.vote_average && <h6 className=' p-2 text-white d-inline'>{itemDetails.vote_average?.toFixed(1)}</h6>} </div> :''}
             {itemDetails.vote_count? <div className='py-2'>vote_count : {itemDetails.vote_count && <h6 className=' p-2 text-white d-inline'>{itemDetails.vote_count?.toFixed(1)}</h6>} </div> :''}
-            {itemDetails.popularity? <div className='py-2'>Popularity : {itemDetails.popularity && <h6 className=' p-2 text-white d-inline'>{itemDetails.popularity?.toFixed(1)}</h6>} </div> :''}
             {itemDetails.release_date? <div className='py-2'>release date : {itemDetails.release_date && <h6 className=' p-2 text-white d-inline'>{itemDetails.release_date}</h6>} </div> :''}
-            <p className='py-3 text-muted'>{itemDetails.overview}</p>
+            <p className='py-1 text-muted'>{itemDetails.overview}</p>
+            {itemDetails.biography? <div><h3 className='pb-3'>Biography</h3> {itemDetails.biography && <h6 className=' p-2 text-white d-inline text-muted'>{itemDetails.biography}</h6>} </div> :''}
+            {itemDetails.place_of_birth? <div><h4 className='pt-3 d-inline-block'>place of birth : </h4> {itemDetails.place_of_birth && <h6 className=' p-2 text-muted text-white d-inline'>{itemDetails.place_of_birth}</h6>} </div> :''}            
+            {itemDetails.birthday? <div><h4 className='pt-2 d-inline-block'>Birthday : </h4> {itemDetails.birthday && <h6 className=' p-2 text-white d-inline text-muted'>{itemDetails.birthday}</h6>} </div> :''}            
         </div>
     </div>
 
