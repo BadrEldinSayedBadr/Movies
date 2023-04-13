@@ -20,6 +20,8 @@ export default function People() {
 
   return <>
   
+  <div className="container">
+
   <div className="row py-5">
     <div className="col-md-4 d-flex align-items-center">
       <div>
@@ -34,5 +36,7 @@ export default function People() {
   </div>
   
   
+  </div>
+
   </>
 }

@@ -17,7 +17,8 @@ import NotFound from './NotFound/NotFound';
 import jwtDecode from 'jwt-decode';
 import ProtectedRoute from './ProtectedRoute/ProtectedRoute';
 import '../index.css';
-
+import MediaContextProvider from '../Context/MediaStore';
+// import SearchComponent from './Search/Search';
 
 export default function App() {
 
@@ -38,7 +39,17 @@ export default function App() {
     setUserData(decodedToken);
   }
 
-  
+
+  // const [data, setData] = useState([...]); // initialize data array here
+
+  // const handleSearch = (searchTerm) => {
+  //   // filter data array here based on the search term
+  //   const filteredData = data.filter(item => item.includes(searchTerm));
+  //   // do something with the filtered data
+  // };
+
+
+
 let routers = createBrowserRouter([
   {path: '/', element: <Layout setUserData={setUserData} userData={userData}/>, children: [
     {index:true, element: <ProtectedRoute userData={userData}><Home/></ProtectedRoute> },
@@ -48,13 +59,18 @@ let routers = createBrowserRouter([
     {path: 'movies', element: <ProtectedRoute userData={userData}><Movies/></ProtectedRoute>},
     {path: 'people', element: <ProtectedRoute userData={userData}><People/></ProtectedRoute>},
     {path: 'profile', element: <ProtectedRoute userData={userData}><Profile userData={userData}/></ProtectedRoute>},
-    {path: 'itemdetails/:id/:media_type', element: <ProtectedRoute userData={userData}><ItemDetails/></ProtectedRoute>},
+    {path: 'itemDetails/:id/:media_type', element: <ProtectedRoute userData={userData}><ItemDetails/></ProtectedRoute>},
     {path: 'tv', element: <ProtectedRoute userData={userData}><Tv/></ProtectedRoute>},
     {path: '*', element: <NotFound/>},
   ]}
 ])
+// {/* <div>
+//       <SearchComponent data={data} handleSearch={handleSearch} />
+//       {/* display filtered data here */}
+//     </div> */}
 
 
-
-  return <RouterProvider router={routers} />
+  return              <MediaContextProvider>
+    <RouterProvider router={routers} />
+              </MediaContextProvider>
 }

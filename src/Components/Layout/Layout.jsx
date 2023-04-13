@@ -19,9 +19,7 @@ export default function Layout({userData, setUserData}) {
   return <>
   
   <Navbar logOut={logOut} userData={userData}/>
-  <div className="container">
   <Outlet></Outlet>
-  </div>
   {/* <Footer/> */}
   
   </>

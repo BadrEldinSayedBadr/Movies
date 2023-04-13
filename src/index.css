@@ -62,6 +62,56 @@ form {
   transform: translate(-50%);
 }
 
+.my-card img {
+  transition: all 0.5s;
+}
+
+.my-card:hover img {
+  transform: scale(1.1);
+}
+.genres {
+  background-color: #24baef;  
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+
+}
+
+
+.header {
+  height: 70vh;
+}
+.box {
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+  background-color: rgba(0,0,0,0.03);
+}
+.cover-image {
+  position: absolute;
+  top:0;
+  width: 100%;
+  height: 100vh;
+  z-index: -2;
+}
+.slick-slider {
+  width: 100%;
+  height: 100%;
+}
+.slick-list {
+  width: 100%;
+  height: 100%;
+}
+.cover-image img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+
 @media only screen and (max-width: 890px) {
   .left-side ul>li {
     display: none;

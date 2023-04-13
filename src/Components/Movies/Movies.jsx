@@ -19,6 +19,7 @@ export default function Movies() {
 
   return <>
   
+  <div className="container">
   <div className="row py-5">
     <div className="col-md-4 d-flex align-items-center">
       <div>
@@ -32,5 +33,8 @@ export default function Movies() {
     {trendingMovies.slice(0, 16).map((item, index)=> <MediaItem item={item} key={index}/>)}
   </div>
 
+  </div>
+
+  
   </>
 }

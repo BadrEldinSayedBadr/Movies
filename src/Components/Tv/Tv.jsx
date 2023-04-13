@@ -17,7 +17,8 @@ export default function Tv() {
     getTrendingMovies('tv', setTrendingTv);
   }, [])
   return <>
-  
+  <div className="container">
+    
   <div className="row py-5">
     <div className="col-md-4 d-flex align-items-center">
       <div>
@@ -29,6 +30,7 @@ export default function Tv() {
     </div>
 
     {trendingTv.slice(0, 16).map((item, index)=> <MediaItem item={item} key={index}/>)}
+  </div>
   </div>
   
   </>

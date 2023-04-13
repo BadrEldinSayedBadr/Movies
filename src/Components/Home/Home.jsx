@@ -1,30 +1,17 @@
-import axios from 'axios';
-import React, { useState , useEffect}  from 'react';
+import React, {useContext} from 'react';
 import MediaItem from '../MediaItem/MediaItem';
+import { MediaContext } from '../../Context/MediaStore';
 
 export default function Home() {
 
-  const [trendingMovies, setTrendingMovies] = useState([]);
-  const [trendingTv, setTrendingTv] = useState([]);
-  const [trendingPeople, setTrendingPeople] = useState([]);
+  let {trendingMovies, trendingPeople, trendingTv} = useContext(MediaContext);
   
-  async function getTrendingMovies(mediaType, callback){
-    let {data} = await axios.get(`
-    https://api.themoviedb.org/3/trending/${mediaType}/week?api_key=ed51b18e61e981ca144231f2423b71a3`);
-    callback(data.results);
-    console.log(data.results);
-  }
-  
-  useEffect(() => {
-    getTrendingMovies('movie', setTrendingMovies);
-    getTrendingMovies('tv', setTrendingTv);
-    getTrendingMovies('person', setTrendingPeople);
-  }, [])
-  
-
-
   return <>
-  <div className="row py-5">
+
+
+<div className="container">
+
+<div className="row py-5">
     <div className="col-md-4 d-flex align-items-center">
       <div>
       <div className='brdr w-25 mb-3'></div>
@@ -62,5 +49,7 @@ export default function Home() {
 
     {trendingPeople.filter((person)=> person.profile_path !== null).slice(0, 16).map((item, index)=> <MediaItem item={item} key={index}/>)}
   </div>
+</div>
+
   </>
 }
