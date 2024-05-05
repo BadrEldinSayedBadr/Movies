@@ -48,19 +48,19 @@ export default function App() {
   //   // do something with the filtered data
   // };
 
-
+ 
 
 let routers = createBrowserRouter([
   {path: '/', element: <Layout setUserData={setUserData} userData={userData}/>, children: [
-    {index:true, element: <ProtectedRoute userData={userData}><Home/></ProtectedRoute> },
-    {path: 'about', element: <ProtectedRoute userData={userData}><About/></ProtectedRoute>},
+    {index:true, element: <Home/> }, // <ProtectedRoute><Home/> </ProtectedRoute>
+    {path: 'about', element: <About/>},
     {path: 'login', element: <Login saveUserData={saveUserData}/>},
     {path: 'register', element: <Register/>},
-    {path: 'movies', element: <ProtectedRoute userData={userData}><Movies/></ProtectedRoute>},
-    {path: 'people', element: <ProtectedRoute userData={userData}><People/></ProtectedRoute>},
-    {path: 'profile', element: <ProtectedRoute userData={userData}><Profile userData={userData}/></ProtectedRoute>},
-    {path: 'itemDetails/:id/:media_type', element: <ProtectedRoute userData={userData}><ItemDetails/></ProtectedRoute>},
-    {path: 'tv', element: <ProtectedRoute userData={userData}><Tv/></ProtectedRoute>},
+    {path: 'movies', element: <Movies/>},
+    {path: 'people', element: <People/>},
+    {path: 'profile', element: <Profile userData={userData}/>},
+    {path: 'itemDetails/:id/:media_type', element: <ItemDetails/>},
+    {path: 'tv', element: <Tv/>},
     {path: '*', element: <NotFound/>},
   ]}
 ])
