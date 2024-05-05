@@ -4,6 +4,10 @@ Welcome to the Movies Website! This project, built using React.js, is designed t
 
 <br>
 
+![Alt Text](Movies.png)
+
+<br>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
